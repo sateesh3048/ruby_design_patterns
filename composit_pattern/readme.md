@@ -1,5 +1,8 @@
-#Composit Pattern
+# Composit Pattern
 The composite design pattern is a structural pattern used to represent objects that have a hierarchical tree structure. It allows for the uniform treatment of both individual leaf nodes and of branches composed of many nodes.
+
+## Composit Pattern Diagram :-
+![Composit patter diagram](https://github.com/sateesh3048/ruby_design_patterns/blob/master/composit_pattern/composite_pattern.png)
 
 ## Creating Composites
 
@@ -9,17 +12,14 @@ To build the composite pattern we need three moving parts.
     2. One or more leaf classes
     3. Ate least one higher-level class, called a composite class
 
-## Composit Pattern Diagram :-
-
-
 ### 1. A common interface:
 
-When thinking about the design of a common interface, we should think “what will my basic and higher-level objects all have in common?” This is considered an interface or base class of the component.
+When thinking about the design of a common interface, we should think *"what will my basic and higher-level objects all have in common?”* This is considered an interface or base class of the component.
 
 Eg: Time measurement is common function for preparing cake between multiple classes.
 1. time required for making batter
 2. time required for baking
-## 3. time required for packing
+3. time required for packing
 
 ### 2. Leaf classes:
 
