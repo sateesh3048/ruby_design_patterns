@@ -127,17 +127,17 @@ end
 ## Example 2: 
 
 ### Problem: 
-We need to caluculate how much money needed to pay salaries for entire employees in company.
-Company can have multiple departments(eg: Production, Sales). 
-Each department can have multiple managers.
-Under each manager multiple employees can work.
+We need to **caluculate how much money needed to pay salaries for entire employees** in company.
+* Company can have multiple departments(eg: Production, Sales). 
+* Each department can have multiple managers.
+* Under each manager multiple employees can work.
 
 ### Solution: 
 To solve this problem we can use composit pattern.
 #### Why? :- 
-1) Here salary caluculation is common across company tree structure. 
-2) Here Employees are leafs or final nodes.
-3) Managers/Departments or composit nodes with multiple leaf nodes.
+1) Here **salary caluculation** is common across **company tree structure**. 
+2) Here **Employees are leafs** or final nodes.
+3) **Managers/Departments or composit nodes** with multiple leaf nodes.
 4) Salary caluculation is common component across leaf/composit nodes.
 
 ### Code :-
