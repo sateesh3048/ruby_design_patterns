@@ -24,7 +24,7 @@ class MathOperations
   end
 end
 
-class Addition < MathOperations
+class AdditionHandler < MathOperations
   def initialize(next_handler)
     @next_handler = next_handler
   end
@@ -50,7 +50,7 @@ class Addition < MathOperations
   end
 end
 
-class Subtraction < MathOperations
+class SubtractionHandler < MathOperations
   def initialize(next_handler)
     @next_handler = next_handler
   end
@@ -76,7 +76,7 @@ class Subtraction < MathOperations
   end
 end
 
-class Multiplication < MathOperations
+class MultiplicationHandler < MathOperations
   def initialize(next_handler)
     @next_handler = next_handler
   end
@@ -102,7 +102,7 @@ class Multiplication < MathOperations
   end
 end
 
-class Division < MathOperations
+class DivisionHandler < MathOperations
   def initialize(next_handler)
     @next_handler = next_handler
   end
@@ -128,10 +128,10 @@ class Division < MathOperations
   end
 end
 
-obj = Addition.new(
-  Subtraction.new(
-    Multiplication.new(
-      Division.new(nil)
+obj = AdditionHandler.new(
+  SubtractionHandler.new(
+    MultiplicationHandler.new(
+      DivisionHandler.new(nil)
     )
   )
 )
