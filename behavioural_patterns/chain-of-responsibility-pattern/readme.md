@@ -23,6 +23,9 @@ Let us say when user clicked on Save "Button" on UI.
 4. if there is no document handler, then document will forward the request to its parent i.d window.
 5. if there is no window handler, then window handler will execute default action from else block.
 
-  ![image](https://user-images.githubusercontent.com/1171883/164885703-b6b1e64f-e345-4b88-ae50-814abb1804eb.png)
+![Chain of Responsibility patter diagram](https://github.com/sateesh3048/ruby_design_patterns/blob/master/behavioural_patterns/chain-of-responsibility-pattern/chain_of_responsibility.png)
 
-![Chain of Responsibility patter diagram](https://github.com/sateesh3048/ruby_design_patterns/blob/master/behavioural_patterns/chain-of-responsibility-pattern/chain_of_responsibility.jpg)
+**UML Diagram:-**
+
+![Chain of Responsibility patter diagram](https://github.com/sateesh3048/ruby_design_patterns/blob/master/behavioural_patterns/chain-of-responsibility-pattern/Design_Chain_of_Responsibility_Design_Pattern_UML.jpg)
+
