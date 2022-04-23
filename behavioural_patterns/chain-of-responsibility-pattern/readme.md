@@ -24,3 +24,5 @@ Let us say when user clicked on Save "Button" on UI.
 5. if there is no window handler, then window handler will execute default action from else block.
 
   ![image](https://user-images.githubusercontent.com/1171883/164885703-b6b1e64f-e345-4b88-ae50-814abb1804eb.png)
+
+![Chain of Responsibility patter diagram](https://github.com/sateesh3048/ruby_design_patterns/blob/master/composit_pattern/composite_pattern.png)
