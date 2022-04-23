@@ -33,7 +33,7 @@ Let us say when user clicked on Save "Button" on UI.
 
 User gives you two numbers and operation(i.e addition/subtraction/multiplication/division).
 So you are going to define 4 handlers 
-1. AdditionHadler
+1. AdditionHandler
 2. SubtractionHandler
 3. MultiplicationHandler
 4. DivisionHandler
@@ -71,7 +71,7 @@ class MathOperations
 end
 ```
 ```
-class Addition < MathOperations
+class AdditionHandler < MathOperations
   def initialize(next_handler)
     @next_handler = next_handler
   end
@@ -98,7 +98,7 @@ class Addition < MathOperations
 end
 ```
 ```
-class Subtraction < MathOperations
+class SubtractionHandler < MathOperations
   def initialize(next_handler)
     @next_handler = next_handler
   end
@@ -125,7 +125,7 @@ class Subtraction < MathOperations
 end
 ```
 ```
-class Multiplication < MathOperations
+class MultiplicationHandler < MathOperations
   def initialize(next_handler)
     @next_handler = next_handler
   end
@@ -152,7 +152,7 @@ class Multiplication < MathOperations
 end
 ```
 ```
-class Division < MathOperations
+class DivisionHandler < MathOperations
   def initialize(next_handler)
     @next_handler = next_handler
   end
@@ -179,10 +179,10 @@ class Division < MathOperations
 end
 ```
 ```
-obj = Addition.new(
-  Subtraction.new(
-    Multiplication.new(
-      Division.new(nil)
+obj = AdditionHandler.new(
+  SubtractionHandler.new(
+    MultiplicationHandler.new(
+      DivisionHandler.new(nil)
     )
   )
 )
