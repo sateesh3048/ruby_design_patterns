@@ -31,6 +31,178 @@ Let us say when user clicked on Save "Button" on UI.
 
 **Example Programs :-**
 
+User gives you two numbers and operation(i.e addition/subtraction/multiplication/division).
+So you are going to define 4 handlers 
+1. AdditionHadler
+2. SubtractionHandler
+3. MultiplicationHandler
+4. DivisionHandler
+
+You are going to create objects for these 4 handlers and add them as chain of objects.
+
+if User enters "multiplication" operation then
+request first goes to addition handler (can not handl request so forward it) -> subtraction handler (can not handl request so forward it) -> multiplication handler(operation handled here)
+
+```
+class MathOperations
+  attr_reader :num1, :num2, :operation, :next_handler
+
+  def initialize
+    raise 'This is an abstract class.So you cant create objects!'
+  end
+
+  def handler(_req)
+    raise 'handler method must be implemented by subclass!'
+  end
+
+  def can_handle?(_req)
+    raise 'can_handle method must be implemented by subclass!'
+  end
+
+  def caluculate(_req)
+    raise 'caluculate method must be implemented by subclass!'
+  end
+
+  def params_initialization(req)
+    @num1 = req[:num1]
+    @num2 = req[:num2]
+    @operation = req[:operation]
+  end
+end
+```
+```
+class Addition < MathOperations
+  def initialize(next_handler)
+    @next_handler = next_handler
+  end
+
+  def handler(req)
+    if can_handle?(req)
+      caluculate(req)
+    else
+      next_handler.handler(req)
+    end
+  end
+
+  private
+
+  def can_handle?(req)
+    req[:operation] == 'addition'
+  end
+
+  def caluculate(req)
+    params_initialization(req)
+    res = num1 + num2
+    puts "Sum of two numbers #{num1} + #{num2} = #{res}"
+  end
+end
+```
+```
+class Subtraction < MathOperations
+  def initialize(next_handler)
+    @next_handler = next_handler
+  end
+
+  def handler(req)
+    if can_handle?(req)
+      caluculate(req)
+    else
+      next_handler.handler(req)
+    end
+  end
+
+  private
+
+  def can_handle?(req)
+    req[:operation] == 'subtraction'
+  end
+
+  def caluculate(req)
+    params_initialization(req)
+    res = num1 - num2
+    puts "Subtraction of two numbers #{num1} - #{num2} = #{res}"
+  end
+end
+```
+```
+class Multiplication < MathOperations
+  def initialize(next_handler)
+    @next_handler = next_handler
+  end
+
+  def handler(req)
+    if can_handle?(req)
+      caluculate(req)
+    else
+      next_handler.handler(req)
+    end
+  end
+
+  private
+
+  def can_handle?(req)
+    req[:operation] == 'multiplication'
+  end
+
+  def caluculate(req)
+    params_initialization(req)
+    res = num1 * num2
+    puts "Multiplication of two numbers #{num1} * #{num2} = #{res}"
+  end
+end
+```
+```
+class Division < MathOperations
+  def initialize(next_handler)
+    @next_handler = next_handler
+  end
+
+  def handler(req)
+    if can_handle?(req)
+      caluculate(req)
+    else
+      puts "Given operation #{req[:operation]} is not supported!. Kindly please contact tech support team."
+    end
+  end
+
+  private
+
+  def can_handle?(req)
+    req[:operation] == 'division'
+  end
+
+  def caluculate(req)
+    params_initialization(req)
+    res = num1 / num2
+    puts "Division of two numbers #{num1} / #{num2} = #{res}"
+  end
+end
+```
+```
+obj = Addition.new(
+  Subtraction.new(
+    Multiplication.new(
+      Division.new(nil)
+    )
+  )
+)
+
+req1 = { num1: 10, num2: 5, operation: 'addition' }
+obj.handler(req1)
+
+req2 = { num1: 10, num2: 5, operation: 'subtraction' }
+obj.handler(req2)
+
+req3 = { num1: 10, num2: 5, operation: 'multiplication' }
+obj.handler(req3)
+
+req4 = { num1: 10, num2: 5, operation: 'division' }
+obj.handler(req4)
+
+req5 = { num1: 10, num2: 5, operation: 'square' }
+obj.handler(req5)
+```
+
 
 ### Advantage of Chain Of Responsibility pattern.
 
