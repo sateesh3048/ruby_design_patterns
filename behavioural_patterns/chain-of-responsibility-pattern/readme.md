@@ -29,7 +29,7 @@ Let us say when user clicked on Save "Button" on UI.
 ![Uml diagram](/behavioural_patterns/chain-of-responsibility-pattern/Design_Chain_of_Responsibility_Design_Pattern_UML.jpg)
 
 
-**Example Programs :-**
+**Example Programs 1 :-**
 
 User gives you two numbers and operation(i.e addition/subtraction/multiplication/division).
 So you are going to define 4 handlers 
@@ -42,6 +42,10 @@ You are going to create objects for these 4 handlers and add them as chain of ob
 
 if User enters "multiplication" operation then
 request first goes to addition handler (can not handl request so forward it) -> subtraction handler (can not handl request so forward it) -> multiplication handler(operation handled here)
+
+**Defining Abstract Hadler :-**
+
+AbstractHandler is defined with common abstract methods. 
 
 ```
 class MathOperations
@@ -70,6 +74,10 @@ class MathOperations
   end
 end
 ```
+**Defining AdditionHandler:-**
+
+AdditionHandler is definied to support additions.
+
 ```
 class AdditionHandler < MathOperations
   def initialize(next_handler)
@@ -97,6 +105,10 @@ class AdditionHandler < MathOperations
   end
 end
 ```
+**Defining SubtractionHandler:-**
+
+SubtractionHandler is definied to support subtractions.
+
 ```
 class SubtractionHandler < MathOperations
   def initialize(next_handler)
@@ -124,6 +136,10 @@ class SubtractionHandler < MathOperations
   end
 end
 ```
+**Defining MultiplicationHandler:-**
+
+MultiplicationHandler is definied to support multiplications.
+
 ```
 class MultiplicationHandler < MathOperations
   def initialize(next_handler)
@@ -151,6 +167,10 @@ class MultiplicationHandler < MathOperations
   end
 end
 ```
+**Defining DivisionHandler:-**
+
+DivisionHandler is definied to support divisions.
+
 ```
 class DivisionHandler < MathOperations
   def initialize(next_handler)
@@ -178,6 +198,8 @@ class DivisionHandler < MathOperations
   end
 end
 ```
+**Calling Handlers :-**
+
 ```
 obj = AdditionHandler.new(
   SubtractionHandler.new(
@@ -202,6 +224,11 @@ obj.handler(req4)
 req5 = { num1: 10, num2: 5, operation: 'square' }
 obj.handler(req5)
 ```
+
+
+**Example Programs 2 :-**
+
+Please click this file [chain_of_responsibility_pattern_example2.rb](/behavioural_patterns/chain-of-responsibility-pattern/chain_of_responsibility_pattern_example2.rb) to view second example.
 
 
 ### Advantage of Chain Of Responsibility pattern.
