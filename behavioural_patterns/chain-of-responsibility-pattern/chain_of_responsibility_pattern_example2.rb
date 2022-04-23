@@ -1,3 +1,7 @@
+# client send us message typ i.e "xml msg/json msg/ text msg/ swift msg"
+# and respect msg.
+# Now we need to define handlers to handle these message types.
+# Based on message type handler will handle these messages.
 class Parser
   attr_reader :successor
 
@@ -7,10 +11,6 @@ class Parser
 end
 
 class XmlParser < Parser
-  # def initialize(successor = nil)
-  #   @successor = successor
-  # end
-
   def call(request)
     return successor.call(request) unless can_handle?(request)
 
@@ -29,12 +29,6 @@ class XmlParser < Parser
 end
 
 class JsonParser < Parser
-  # attr_reader :successor
-
-  # def initialize(successor = nil)
-  #   @successor = successor
-  # end
-
   def call(request)
     return successor.call(request) unless can_handle?(request)
 
@@ -53,12 +47,6 @@ class JsonParser < Parser
 end
 
 class SwiftParser < Parser
-  # attr_reader :successor
-
-  # def initialize(successor = nil)
-  #   @successor = successor
-  # end
-
   def call(request)
     return successor.call(request) unless can_handle?(request)
 
@@ -77,12 +65,6 @@ class SwiftParser < Parser
 end
 
 class TextParser < Parser
-  # attr_reader :successor
-
-  # def initialize(successor = nil)
-  #   @successor = successor
-  # end
-
   def call(request)
     if can_handle?(request)
       handle(request)
