@@ -210,19 +210,19 @@ obj = AdditionHandler.new(
 )
 
 req1 = { num1: 10, num2: 5, operation: 'addition' }
-obj.handler(req1)
+obj.handler(req1) #Result: Sum of two numbers 10 + 5 = 15
 
 req2 = { num1: 10, num2: 5, operation: 'subtraction' }
-obj.handler(req2)
+obj.handler(req2) #Result: Subtraction of two numbers 10 - 5 = 5
 
 req3 = { num1: 10, num2: 5, operation: 'multiplication' }
-obj.handler(req3)
+obj.handler(req3) #Result: Multiplication of two numbers 10 * 5 = 50 
 
 req4 = { num1: 10, num2: 5, operation: 'division' }
-obj.handler(req4)
+obj.handler(req4) #Result: Division of two numbers 10 / 5 = 2
 
 req5 = { num1: 10, num2: 5, operation: 'square' }
-obj.handler(req5)
+obj.handler(req5) #Result: Given operation square is not supported!. Kindly please contact tech support team.
 ```
 
 
