@@ -1,8 +1,8 @@
 class MathOperations
   attr_reader :num1, :num2, :operation, :next_handler
 
-  def initialize(next_handler)
-    @next_handler = next_handler
+  def initialize
+    raise 'This is an abstract class.So you cant create objects!'
   end
 
   def handler(_req)
@@ -25,6 +25,10 @@ class MathOperations
 end
 
 class Addition < MathOperations
+  def initialize(next_handler)
+    @next_handler = next_handler
+  end
+
   def handler(req)
     if can_handle?(req)
       caluculate(req)
@@ -47,6 +51,10 @@ class Addition < MathOperations
 end
 
 class Subtraction < MathOperations
+  def initialize(next_handler)
+    @next_handler = next_handler
+  end
+
   def handler(req)
     if can_handle?(req)
       caluculate(req)
@@ -69,6 +77,10 @@ class Subtraction < MathOperations
 end
 
 class Multiplication < MathOperations
+  def initialize(next_handler)
+    @next_handler = next_handler
+  end
+
   def handler(req)
     if can_handle?(req)
       caluculate(req)
@@ -91,6 +103,10 @@ class Multiplication < MathOperations
 end
 
 class Division < MathOperations
+  def initialize(next_handler)
+    @next_handler = next_handler
+  end
+
   def handler(req)
     if can_handle?(req)
       caluculate(req)
