@@ -16,8 +16,10 @@ Let’s understand this pattern with an example, suppose we want to provide an a
 house are – 
 1. building foundation, 
 2. building pillars, 
-3. building walls 
-4. and windows. 
+3. building roofs
+4. building walls 
+5. and windows. 
+
 The important point is that the we can’t change the order of execution because we can’t build windows before building the foundation. So in this 
 case we can create a template method that will use different methods to build the house.
 
@@ -26,6 +28,7 @@ implementation for this, if subclasses want to override this method, they can bu
 To **make sure that subclasses don’t override the template method, we should make it final**.
 
 ## Template Method Class Diagram
+![Template Method Pattern Diagram](/behavioural_patterns/template_method_pattern/template-method-pattern.png)
 
 ## Template Method Design Pattern Important Points
 
