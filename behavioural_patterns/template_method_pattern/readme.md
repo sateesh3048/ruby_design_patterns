@@ -25,4 +25,10 @@ Now building the foundation for a house is same for all type of houses, whether 
 implementation for this, if subclasses want to override this method, they can but mostly it’s common for all the types of houses.
 To **make sure that subclasses don’t override the template method, we should make it final**.
 
+## Template Method Class Diagram
 
+## Template Method Design Pattern Important Points
+
+1. Template method should consists of certain steps whose order is fixed and for some of the methods, implementation differs from base class to subclass. **Template method should be final.**
+2. Most of the times, subclasses calls methods from super class **but in template pattern, superclass template method calls methods from subclasses, this is known as Hollywood Principle** – **don’t call us, we’ll call you.**.
+3. Methods in base class with default implementation are referred as Hooks and they are intended to be overridden by subclasses, if you want some of the methods to be not overridden, you can make them final, for example in our case we can make buildFoundation() method final because if we don’t want subclasses to override it.
