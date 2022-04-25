@@ -30,6 +30,82 @@ To **make sure that subclasses don’t override the template method, we should m
 ## Template Method Class Diagram
 ![Template Method Pattern Diagram](/behavioural_patterns/template_method_pattern/template-method-pattern.png)
 
+## Template Method Pattern Example Demo :-
+
+
+
+```ruby
+#House is an abstract class.
+
+#Common Methods :-
+# In this class we have defined build_foundation, build_roof, build_windows as Non Varying / common methods.
+class House
+
+#build_house is the template method. In this method we have defined the sequence of steps required to build house.
+#Note: Since this is template method, we should not override this method in sub classes.
+def build_house
+    build_foundation
+    build_pillars
+    build_roof
+    build_walls
+    build_windows
+    puts 'Congratulations!!. Your house is ready to use!'
+  end
+
+  def build_foundation
+    puts 'House foundation completed!'
+  end
+
+  def build_roof
+    puts 'House Roof completed!'
+  end
+
+  def build_windows
+    puts 'Building windows completed!'
+  end
+end
+```
+
+In below class we are creating wooden house class to build wodden house.
+In this class we have defined Varying methods/distinct methods such as build_walls, build_pillars.
+```ruby
+class WoodenHouse < House
+  def build_walls
+    puts 'Building wooden walls'
+  end
+
+  def build_pillars
+    puts 'Building pillars with wooden coating!'
+  end
+end
+```
+We are defining glass house class  to build glass house.
+In this class we have defined Varying methods such as build_walls, build_pillars.
+
+```ruby
+class GlassHouse < House
+  def build_walls
+    puts 'Building glass walls'
+  end
+
+  def build_pillars
+    puts 'Building pillars with glass coating!'
+  end
+end
+```
+We are calling wooden house and glass house to build wooden and glass houses.
+
+```ruby
+puts '********** Building wooden house *************'
+wooden_house = WoodenHouse.new
+wooden_house.build_house
+
+puts "\n\n Building glass house *****************"
+glass_house = GlassHouse.new
+glass_house.build_house
+
+```
+
 ## Template Method Design Pattern Important Points
 
 1. Template method should consists of certain steps whose order is fixed and for some of the methods, implementation differs from base class to subclass. **Template method should be final.**
