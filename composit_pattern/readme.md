@@ -7,7 +7,7 @@ To build the composite pattern we need three moving parts.
 
     1. A common interface or base class for all of your objects
     2. One or more leaf classes
-    3. Ate least one higher-level class, called a composite class
+    3. At least one higher-level class, called a composite class
 
 ### 1. A common interface:
 
@@ -54,7 +54,8 @@ In the Composite pattern, we’ll model every step in a separate class with a co
 
 ```ruby
 class Task
-  attr_accessor :name, :parent  def initialize(name)
+  attr_accessor :name, :parent  
+  def initialize(name)
     @name = name
     @parent = nil
   end
