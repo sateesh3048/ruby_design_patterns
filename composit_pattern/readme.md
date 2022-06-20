@@ -71,7 +71,9 @@ end
 class AddDryIngredientsTask < Task
   def initialize
     super('Add dry ingredients')
-  end  def get_time_required
+  end  
+  
+  def get_time_required
     1.0
   end
 end
@@ -84,10 +86,14 @@ class CompositeTask < Task
   def initialize(name)
     super(name)
     @sub_tasks = []
-  end  def add_sub_task(task)
+  end  
+  
+  def add_sub_task(task)
     @sub_tasks << task
     task.parent = self
-  end  def remove_sub_task(task)
+  end  
+  
+  def remove_sub_task(task)
     @sub_tasks.delete(task)
     task.parent = nil
   end
