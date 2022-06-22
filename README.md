@@ -88,3 +88,19 @@ https://www.youtube.com/watch?v=tv-_1er1mWI
     Object behaves differently based on a finite amount of states.
     Examples:
         Finite State Machines
+
+
+# 10 Architecture Patterns Used In Enterprise Software Development Today
+https://www.youtube.com/watch?v=BrT3AO8bVQY
+
+1) Layered Pattern / n-tier architecture
+2) Pipe Filter Pattern
+3) Client Server Pattern
+4) Model View Controller Pattern
+5) Event Bus Pattern
+6) Microservices Pattern
+7) Broker Pattern
+8) Peer to Peer Pattern
+9) Blackboard Pattern
+10) Master Slave Pattern
+
