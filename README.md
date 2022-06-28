@@ -30,6 +30,7 @@ Structural design pattern **is a blueprint of how different objects and classes 
 To learn composit pattern please [click this composit-pattern](/structural_patterns/composit_pattern)
 
 2. **Strategy Pattern**
+
 To learn strategy pattern please [click this strategy-pattern](/structural_patterns/strategy_pattern)
 
 
