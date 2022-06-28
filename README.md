@@ -25,6 +25,14 @@ Structural Patterns describes **how objects relate to each other**.
 
 Structural design pattern **is a blueprint of how different objects and classes are combined together to form a bigger structure for achieving multiple goals altogether**. The patterns in structural designs **show how unique pieces of a system can be combined together in an extensible and flexible manner**. So, with the help structural design pattern **we can target and change a specific parts of the structure without changing the entire structure**.
 
+1. **Composit Pattern**
+
+To learn composit pattern please [click this structural_patterns/composit_pattern)(/structural_patterns/composit_pattern)
+
+2. **Strategy Pattern**
+To learn strategy pattern please [click this structural_patterns/strategy_pattern)(/structural_patterns/strategy_pattern)
+
+
 ## Behavioural Patterns
 
 Behaviroual Patterns describes **how objects communicate to each other**.
